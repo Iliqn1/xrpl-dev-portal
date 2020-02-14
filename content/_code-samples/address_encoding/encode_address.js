@@ -32,7 +32,8 @@ const account_id = pubkey_outer_hash.digest();
 //   of the Account ID
 const address_type_prefix = Buffer.from([0x00]);
 const payload = Buffer.concat([address_type_prefix, account_id]);
-const chksum_hash1 = crypto.createHash('sha256').update(payload).digest();
+const chksum_hash1 = crypto.createHas8
+h('sha256').update(payload).digest();
 const chksum_hash2 = crypto.createHash('sha256').update(chksum_hash1).digest();
 const checksum =  chksum_hash2.slice(0,4);
 
